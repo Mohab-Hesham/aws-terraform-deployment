@@ -37,14 +37,14 @@ aws-terraform-deployment
 │   ├── vpc/
 │   │   ├── main.tf
 │   │   ├── variables.tf
-│   │   ├── provider.tf
 │   │   └── outputs.tf
+│   │   
 │   │
 │   ├── ec2/
 │   │   ├── main.tf
 │   │   ├── variables.tf
-│   │   ├── provider.tf
 │   │   └── outputs.tf
+│   │   
 │   │
 │   └── dynamodb/
 │       ├── main.tf
@@ -66,60 +66,49 @@ aws-terraform-deployment
 ```
 
 
+## Modules Directory:
 
+vpc/ Directory:
 
+main.tf: Contains the main Terraform configuration for creating a VPC, including subnets, route tables, and internet gateway.
+variables.tf: Defines input variables used in the VPC module.
+outputs.tf: Defines the outputs of the VPC module, such as VPC ID, subnet IDs, etc.
 
+ec2/ Directory:
 
-## Running the tests
+main.tf: Contains the main Terraform configuration for creating EC2 instances within the VPC.
+variables.tf: Defines input variables used in the EC2 module.
+provider.tf: Specifies the provider configuration for AWS.
+outputs.tf: Defines the outputs of the EC2 module, such as instance IDs, public IP addresses, etc.
 
-Explain how to run the automated tests for this system
+dynamodb/ Directory:
 
-### Break down into end to end tests
+main.tf: Contains the main Terraform configuration for creating DynamoDB tables.
+variables.tf: Defines input variables used in the DynamoDB module.
 
-Explain what these tests test and why
+Project1 Directory:
 
+main.tf: Contains the main Terraform configuration for project 1, which may include resource definitions and module invocations specific to the project.
+variables.tf: Defines input variables used in project 1.
+provider.tf: Specifies the provider configuration for AWS specific to project 1.
+vpc-end-points.tf: Contains Terraform configurations for defining VPC endpoints specific to project 1.
+outputs.tf: Defines the outputs specific to project 1.
 
-Give an example
+Project2 Directory:
 
+main.tf: Contains the main Terraform configuration for project 2, which may include resource definitions and module invocations specific to the project.
+variables.tf: Defines input variables used in project 2.
+provider.tf: Specifies the provider configuration for AWS specific to project 2.
+vpc-end-points.tf: Contains Terraform configurations for defining VPC endpoints specific to project 2.
+outputs.tf: Defines the outputs specific to project 2.
 
-### And coding style tests
-
-Explain what these tests test and why
-
-
-Give an example
-
-
+### S3 Module
+- Creates the S3 bucket to save the state file 
+- Inputs:
+  - `bucket---mo`: The name of the S3 bucket.
+  
 ## Deployment
+![final project](https://github.com/Mohab-Hesham/aws-terraform-deployment/assets/161193942/e701533a-80ab-4fde-8418-eb3ee5a16769)
 
-Add additional notes about how to deploy this on a live system
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* *Billie Thompson* - Initial work - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
